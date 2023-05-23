@@ -1,23 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import TaskCreate from './components/TaskCreate';
+import Tasklist from './components/TaskList';
 
 function App() {
+
+  const createTask = (title, taskDesc) => {
+    console.log(title,taskDesc);
+    
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TaskCreate onCreate={createTask}/>
+      <h1>Tasks</h1>
+      <Tasklist/>
     </div>
   );
 }
